@@ -1,0 +1,52 @@
+﻿@model List<UserDetails.Models.User>
+
+<div class="row">
+    <div></div>
+</div>
+
+<div class="row">
+    <div>
+        <form asp-action="Index" method="get" asp-controller="User">
+            <input type="search" name="search"/>
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+    <div>
+        <<input type="button" asp-action="Index" asp-controller="User" value="BackToList"/>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+
+                    <th scope="col">email</th>
+
+                    <th scope="col">Address</th>
+                    <th scope="col">DOb</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var employee in Model)
+                {
+                    <tr>
+                        <td>@employee.FirstName</td>
+                        <td>@employee.LastName</td>
+                        <td>@employee.EmailId</td>
+                        <td>@employee.Address</td>
+
+                        <td>@employee.DateOfBirth</td>
+
+
+                    </tr>
+                    
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
